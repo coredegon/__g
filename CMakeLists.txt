@@ -5,6 +5,8 @@ project(${PROJECT_NAME})
 
 add_executable(${PROJECT_NAME} 
 	src/main.cpp
+	src/AppWindow.h
+	src/AppWindow.cpp
 )
 
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
