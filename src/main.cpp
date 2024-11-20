@@ -6,6 +6,7 @@
 #define SZ_Y 500
 
 void framebufferSizeCallback(GLFWwindow* pWindow, int width, int height);
+void processInput(GLFWwindow* pWindow);
 
 int main()
 {
@@ -36,6 +37,8 @@ int main()
 
     while(!glfwWindowShouldClose(pWindow))
     {
+        processInput(pWindow);
+
         glfwSwapBuffers(pWindow);
         glfwPollEvents();
     }
@@ -47,4 +50,10 @@ int main()
 void framebufferSizeCallback(GLFWwindow* pWindow, int width, int height)
 {
     glViewport(0, 0, width, height);
+}
+
+void processInput(GLFWwindow* pWindow)
+{
+    if(glfwGetKey(pWindow, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(pWindow, true);
 }
