@@ -37,10 +37,15 @@ int main()
 
     while(!glfwWindowShouldClose(pWindow))
     {
+        // input
         processInput(pWindow);
+        // render
+        glClearColor(0.8f, 0.2f, 0.4f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
 
-        glfwSwapBuffers(pWindow);
+        // other things
         glfwPollEvents();
+        glfwSwapBuffers(pWindow);
     }
 
     glfwTerminate();
